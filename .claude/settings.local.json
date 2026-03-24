@@ -1,0 +1,23 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(gradle wrapper:*)",
+      "Bash(mvn clean:*)",
+      "Bash(mvn dependency:tree -pl backend)",
+      "Bash(docker-compose up:*)",
+      "Bash(docker compose:*)",
+      "Bash(./gradlew build:*)",
+      "Bash(./gradlew :composeApp:wasmJsBrowserDevelopmentWebpack)",
+      "Bash(openssl genrsa:*)",
+      "Bash(mkdir -p .)",
+      "Bash(openssl rsa:*)",
+      "Bash(./gradlew wrapper:*)",
+      "Bash(./gradlew :shared:build)",
+      "WebSearch",
+      "Bash(./gradlew clean:*)",
+      "Bash(echo:*)",
+      "Bash(./gradlew :webApp:build :shared:build --no-daemon)",
+      "Bash(./gradlew :webApp:build --no-daemon)"
+    ]
+  }
+}
