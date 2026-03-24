@@ -1,5 +1,5 @@
 # Overview
-Meatspace is an online community planning platform. The primary goal of the platform is to allow communities to schedule meetings and events, and publicize them to their users.
+Meatspace is an online community planning platform. The primary goal of the platform is to allow communities to schedule meetings and events and publicize them to their users.
 
 # Core Features
 - Meetings/Events
@@ -67,4 +67,8 @@ System Components:
 
 Technical Specifications:
 - Build will be based on Maven
+- Single root Maven project with submodules: shared, backend, uis
 - All code will be written in Kotlin
+- All dependencies will be managed using Maven
+- All tests will be written in JUnit 5
+- All dependencies, including build tools and plugins, will use the latest stable versions
