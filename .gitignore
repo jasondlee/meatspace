@@ -8,3 +8,4 @@ local.properties
 .env
 *.log
 .DS_Store
+.kotlin
