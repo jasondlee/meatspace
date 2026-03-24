@@ -1,0 +1,24 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+GRADLE_VERSION="9.3.1"
+BASE_DIR="$(cd "$(dirname "$0")" && pwd)"
+DIST_DIR="$BASE_DIR/.gradle-dist"
+GRADLE_HOME="$DIST_DIR/gradle-$GRADLE_VERSION"
+ZIP_FILE="$DIST_DIR/gradle-$GRADLE_VERSION-bin.zip"
+DOWNLOAD_URL="https://services.gradle.org/distributions/gradle-$GRADLE_VERSION-bin.zip"
+export GRADLE_USER_HOME="$BASE_DIR/.gradle-home"
+
+mkdir -p "$DIST_DIR"
+mkdir -p "$GRADLE_USER_HOME"
+
+if [[ ! -x "$GRADLE_HOME/bin/gradle" ]]; then
+  if [[ ! -f "$ZIP_FILE" ]]; then
+    echo "Downloading Gradle $GRADLE_VERSION" >&2
+    curl -fsSL "$DOWNLOAD_URL" -o "$ZIP_FILE"
+  fi
+  rm -rf "$GRADLE_HOME"
+  unzip -q -o "$ZIP_FILE" -d "$DIST_DIR"
+fi
+
+exec "$GRADLE_HOME/bin/gradle" --no-daemon "$@"
