@@ -72,3 +72,4 @@ Technical Specifications:
 - All dependencies will be managed using Maven
 - All tests will be written in JUnit 5
 - All dependencies, including build tools and plugins, will use the latest stable versions
+- The Compose Multiplatform build should use the latest version of the Android Gradle Plugin (version 9 or greater)
